@@ -60,7 +60,8 @@ export const config = {
             "appium:automationName": "UiAutomator2",
             "appium:app": path.join(
                 process.cwd(),
-                "./apps/android/apk-prod.apk",
+                // "./apps/android/apk-prod.apk",
+                "./apps/android/ApiDemos-debug.apk",
             ),
         },
     ],

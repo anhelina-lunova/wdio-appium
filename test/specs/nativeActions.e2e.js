@@ -60,7 +60,7 @@ describe("Native Actions", () => {
                 .perform();
         });
 
-        it.only("By coordinates with performActions", async () => {
+        it("By coordinates with performActions", async () => {
             await driver.activateApp("io.appium.android.apis");
             await $("~Views").click();
 
@@ -94,7 +94,7 @@ describe("Native Actions", () => {
             await expect(element).toBeDisplayed();
         });
 
-        it("Swipe to the end", async () => {
+        it("Swipe Up", async () => {
             await driver.activateApp("io.appium.android.apis");
             await $("~Views").click();
 

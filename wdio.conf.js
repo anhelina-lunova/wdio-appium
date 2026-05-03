@@ -1,4 +1,5 @@
 import path from "path";
+import allureReporter from "@wdio/allure-reporter";
 
 export const config = {
     //
@@ -136,7 +137,17 @@ export const config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ["spec", ["allure", { outputDir: "allure-results" }]],
+    reporters: [
+        "spec",
+        [
+            "allure",
+            {
+                outputDir: "allure-results",
+                disableWebdriverStepsReporting: true,
+                disableWebdriverScreenshotsReporting: false,
+            },
+        ],
+    ],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -215,8 +226,17 @@ export const config = {
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
-    // beforeTest: function (test, context) {
-    // },
+    beforeTest: async function (test, context) {
+        try {
+            await driver.startRecordingScreen({
+                videoType: "mp4",
+                timeLimit: 180,
+                bitRate: 1000000, // 1Mbps
+            });
+        } catch (e) {
+            console.warn(`[Video Start Error]: ${e.message}`);
+        }
+    },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
@@ -244,8 +264,24 @@ export const config = {
         context,
         { error, result, duration, passed, retries },
     ) {
+        // 1. Скріншот лише при падінні
         if (!passed) {
             await browser.takeScreenshot();
+        }
+
+        // 2. Відео для всіх тестів
+        try {
+            // Зупиняємо запис і отримуємо base64
+            const video = await driver.stopRecordingScreen();
+
+            // Додаємо в Allure
+            allureReporter.addAttachment(
+                `Execution Video - ${test.title}`,
+                Buffer.from(video, "base64"),
+                "video/mp4",
+            );
+        } catch (e) {
+            console.warn(`[Video Error]: ${e.message}`);
         }
     },
 

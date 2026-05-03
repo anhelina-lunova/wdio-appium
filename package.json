@@ -24,6 +24,7 @@
         "start-vd-headless": "emulator -avd Samsung_Galaxy_S10 -no-window -no-audio -no-boot-anim -accel on -gpu swiftshader_indirect",
         "started-vds": "adb devices",
         "homework-1": "npx wdio run wdio.conf.js --spec ./test/specs/homeworks/hw1Search.e2e.js",
-        "allure-report": "npx allure generate ./allure-results --clean && npx allure open"
+        "allure-report": "npx allure generate ./allure-results --clean && npx allure open",
+        "actions": "npx wdio run wdio.conf.js --spec ./test/specs/actions.e2e.js"
     }
 }

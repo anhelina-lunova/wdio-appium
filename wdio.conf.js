@@ -55,8 +55,8 @@ export const config = {
             // capabilities for local Appium web tests on an Android Emulator
             platformName: "Android",
             // browserName: "Chrome",
-            "appium:deviceName": "Pixel 9",
-            "appium:platformVersion": "16.0",
+            "appium:deviceName": "Samsung Galaxy S10",
+            "appium:platformVersion": "11.0",
             "appium:automationName": "UiAutomator2",
             "appium:app": path.join(
                 process.cwd(),

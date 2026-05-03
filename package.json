@@ -19,8 +19,8 @@
     "scripts": {
         "wdio": "wdio run ./wdio.conf.js",
         "vd-list": "emulator -list-avds",
-        "start-vd-headed": "emulator -avd Pixel_9",
-        "start-vd-headless": "emulator -avd Pixel_9 -no-window -no-audio -no-boot-anim -accel on -gpu swiftshader_indirect",
+        "start-vd-headed": "emulator -avd Samsung_Galaxy_S10",
+        "start-vd-headless": "emulator -avd Samsung_Galaxy_S10 -no-window -no-audio -no-boot-anim -accel on -gpu swiftshader_indirect",
         "started-vds": "adb devices"
     }
 }

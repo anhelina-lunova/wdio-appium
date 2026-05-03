@@ -1,3 +1,5 @@
+import path from "path";
+
 export const config = {
     //
     // ====================
@@ -56,6 +58,10 @@ export const config = {
             "appium:deviceName": "Pixel 9",
             "appium:platformVersion": "16.0",
             "appium:automationName": "UiAutomator2",
+            "appium:app": path.join(
+                process.cwd(),
+                "./apps/android/apk-prod.apk",
+            ),
         },
     ],
 

@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "types": [
+            "node",
+            "@wdio/globals/types",
+            "@wdio/mocha-framework",
+            "expect-webdriverio",
+            "@wdio/appium-service"
+        ],
+        "paths": {
+            "#test/*": ["./test/*"],
+            "#pages/*": ["./test/page-objects/pages/*"],
+            "#forms/*": ["./test/page-objects/forms/*"]
+        }
+    },
+    "include": ["test/**/*"],
+    "exclude": ["apps", "allure-results", "node_modules"]
+}

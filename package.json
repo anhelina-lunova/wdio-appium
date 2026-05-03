@@ -25,6 +25,7 @@
         "started-vds": "adb devices",
         "homework-1": "npx wdio run wdio.conf.js --spec ./test/specs/homeworks/hw1Search.e2e.js",
         "allure-report": "npx allure generate ./allure-results --clean && npx allure open",
-        "actions": "npx wdio run wdio.conf.js --spec ./test/specs/actions.e2e.js"
+        "actions": "npx wdio run wdio.conf.js --spec ./test/specs/actions.e2e.js",
+        "homework-2": "npx wdio run wdio.conf.js --spec ./test/specs/homeworks/hw2Actions.e2e.js"
     }
 }

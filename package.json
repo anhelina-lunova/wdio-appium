@@ -18,7 +18,9 @@
     },
     "scripts": {
         "wdio": "wdio run ./wdio.conf.js",
-        "emulist": "emulator -list-avds",
-        "emurun": "emulator -avd Pixel_9"
+        "vd-list": "emulator -list-avds",
+        "start-vd-headed": "emulator -avd Pixel_9",
+        "start-vd-headless": "emulator -avd Pixel_9 -no-window -no-audio -no-boot-anim -accel on -gpu swiftshader_indirect",
+        "started-vds": "adb devices"
     }
 }

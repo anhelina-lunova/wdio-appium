@@ -21,6 +21,7 @@
         "vd-list": "emulator -list-avds",
         "start-vd-headed": "emulator -avd Samsung_Galaxy_S10",
         "start-vd-headless": "emulator -avd Samsung_Galaxy_S10 -no-window -no-audio -no-boot-anim -accel on -gpu swiftshader_indirect",
-        "started-vds": "adb devices"
+        "started-vds": "adb devices",
+        "homework-1": "npx wdio run wdio.conf.js --spec ./test/specs/homeworks/hw1Search.e2e.js"
     }
 }

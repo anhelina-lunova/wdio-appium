@@ -15,7 +15,8 @@
         "@wdio/spec-reporter": "^9.27.1",
         "allure-commandline": "^2.38.1",
         "appium": "^3.3.1",
-        "appium-uiautomator2-driver": "^7.1.2"
+        "appium-uiautomator2-driver": "^7.1.2",
+        "dotenv": "^17.4.2"
     },
     "scripts": {
         "wdio": "wdio run ./wdio.conf.js",
@@ -28,6 +29,7 @@
         "actions": "npx wdio run wdio.conf.js --spec ./test/specs/actions.e2e.js",
         "homework-2": "npx wdio run wdio.conf.js --spec ./test/specs/homeworks/hw2Actions.e2e.js",
         "native-actions": "npx wdio run wdio.conf.js --spec ./test/specs/nativeActions.e2e.js",
-        "homework-3": "npx wdio run wdio.conf.js --spec ./test/specs/homeworks/hw3NativeActions.e2e.js"
+        "homework-3": "npx wdio run wdio.conf.js --spec ./test/specs/homeworks/hw3NativeActions.e2e.js",
+        "sign-in": "npx wdio run wdio.conf.js --spec ./test/specs/signIn.e2e.js"
     }
 }

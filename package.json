@@ -15,21 +15,21 @@
         "@wdio/spec-reporter": "^9.27.1",
         "allure-commandline": "^2.38.1",
         "appium": "^3.3.1",
-        "appium-uiautomator2-driver": "^7.1.2",
+        "appium-uiautomator2-driver": "^7.2.0",
+        "appium-xcuitest-driver": "^11.2.1",
         "dotenv": "^17.4.2"
     },
     "scripts": {
-        "wdio": "wdio run ./wdio.conf.js",
         "vd-list": "emulator -list-avds",
         "start-vd-headed": "emulator -avd Samsung_Galaxy_S10",
         "start-vd-headless": "emulator -avd Samsung_Galaxy_S10 -no-window -no-audio -no-boot-anim -accel on -gpu swiftshader_indirect",
         "started-vds": "adb devices",
-        "homework-1": "npx wdio run wdio.conf.js --spec ./test/specs/homeworks/hw1Search.e2e.js",
         "allure-report": "npx allure generate ./allure-results --clean && npx allure open",
-        "actions": "npx wdio run wdio.conf.js --spec ./test/specs/actions.e2e.js",
-        "homework-2": "npx wdio run wdio.conf.js --spec ./test/specs/homeworks/hw2Actions.e2e.js",
-        "native-actions": "npx wdio run wdio.conf.js --spec ./test/specs/nativeActions.e2e.js",
-        "homework-3": "npx wdio run wdio.conf.js --spec ./test/specs/homeworks/hw3NativeActions.e2e.js",
-        "sign-in": "npx wdio run wdio.conf.js --spec ./test/specs/signIn.e2e.js"
+        "actions": "npx config/android-wdio run wdio.conf.js --spec ./test/specs/actions.e2e.js",
+        "native-actions": "npx config/android-wdio run wdio.conf.js --spec ./test/specs/nativeActions.e2e.js",
+        "sign-in": "npx wdio run config/android-wdio.conf.js --spec ./test/specs/signIn.e2e.js",
+        "homework-1": "npx config/android-wdio run wdio.conf.js --spec ./test/specs/homeworks/hw1Search.e2e.js",
+        "homework-2": "npx config/android-wdio run wdio.conf.js --spec ./test/specs/homeworks/hw2Actions.e2e.js",
+        "homework-3": "npx wdio run config/android-wdio.conf.js --spec ./test/specs/homeworks/hw3NativeActions.e2e.js"
     }
 }

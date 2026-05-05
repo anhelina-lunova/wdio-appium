@@ -14,5 +14,5 @@
         }
     },
     "include": ["test/**/*"],
-    "exclude": ["apps", "allure-results", "node_modules"]
+    "exclude": ["allure-report", "allure-results", "apps", "node_modules"]
 }

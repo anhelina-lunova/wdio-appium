@@ -1,6 +1,4 @@
 import { driver, expect } from "@wdio/globals";
-// import LoginPage from "#pages/login.page.js";
-// import SecurePage from "#pages/secure.page.js";
 
 describe("Search elements", () => {
     it("Accessibility ID", async () => {

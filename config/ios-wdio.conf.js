@@ -24,7 +24,7 @@ export const config = {
     // The path of the spec files will be resolved relative from the directory of
     // of the config file unless it's absolute.
     //
-    specs: ["../test/specs/**/*.js"],
+    specs: ["../test/ios/specs/**/*.js"],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -56,10 +56,13 @@ export const config = {
             // capabilities for local Appium web tests on an iOS Simulator
             platformName: "iOS",
             // browserName: "Safari",
-            "appium:deviceName": "Samsung Galaxy S10",
-            "appium:platformVersion": "11.0",
+            "appium:deviceName": "iPhone 16 Pro Max",
+            "appium:platformVersion": "26.1",
             "appium:automationName": "XCUITest",
-            "appium:app": path.join(process.cwd(), "./apps/ios/ipa-prod.ipa"),
+            "appium:app": path.join(
+                process.cwd(),
+                "./apps/ios/simulator-prod.app",
+            ),
         },
     ],
 

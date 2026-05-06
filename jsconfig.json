@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "ignoreDeprecations": "6.0",
         "types": [
             "node",
             "@wdio/globals/types",
@@ -7,12 +8,15 @@
             "expect-webdriverio",
             "@wdio/appium-service"
         ],
+        "baseUrl": ".",
         "paths": {
             "#test/*": ["./test/*"],
-            "#pages/*": ["./test/page-objects/pages/*"],
-            "#forms/*": ["./test/page-objects/forms/*"]
+            "#screens-android/*": ["test/android/page-objects/screens/*"],
+            "#forms-android/*": ["test/android/page-objects/forms/*"],
+            "#screens-ios/*": ["test/ios/page-objects/screens/*"],
+            "#forms-ios/*": ["test/ios/page-objects/forms/*"]
         }
     },
-    "include": ["test/**/*"],
+    "include": ["test/**/*", "config/*"],
     "exclude": ["allure-report", "allure-results", "apps", "node_modules"]
 }

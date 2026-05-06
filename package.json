@@ -25,11 +25,12 @@
         "start-vd-headless": "emulator -avd Samsung_Galaxy_S10 -no-window -no-audio -no-boot-anim -accel on -gpu swiftshader_indirect",
         "started-vds": "adb devices",
         "allure-report": "npx allure generate ./allure-results --clean && npx allure open",
-        "actions": "npx config/android-wdio run wdio.conf.js --spec ./test/specs/actions.e2e.js",
-        "native-actions": "npx config/android-wdio run wdio.conf.js --spec ./test/specs/nativeActions.e2e.js",
-        "sign-in": "npx wdio run config/android-wdio.conf.js --spec ./test/specs/signIn.e2e.js",
-        "homework-1": "npx config/android-wdio run wdio.conf.js --spec ./test/specs/homeworks/hw1Search.e2e.js",
-        "homework-2": "npx config/android-wdio run wdio.conf.js --spec ./test/specs/homeworks/hw2Actions.e2e.js",
-        "homework-3": "npx wdio run config/android-wdio.conf.js --spec ./test/specs/homeworks/hw3NativeActions.e2e.js"
+        "and-actions": "npx wdio run config/android-wdio.conf.js --spec ./test/android/specs/actions.e2e.js",
+        "and-native-actions": "npx wdio run config/android-wdio.conf.js --spec ./test/android/specs/nativeActions.e2e.js",
+        "and-sign-in": "npx wdio run config/android-wdio.conf.js --spec ./test/android/specs/signIn.e2e.js",
+        "and-homework-1": "npx wdio run config/android-wdio.conf.js --spec ./test/android/specs/homeworks/hw1Search.e2e.js",
+        "and-homework-2": "npx wdio run config/android-wdio.conf.js --spec ./test/android/specs/homeworks/hw2Actions.e2e.js",
+        "and-homework-3": "npx wdio run config/android-wdio.conf.js --spec ./test/android/specs/homeworks/hw3NativeActions.e2e.js",
+        "ios-actions": "npx wdio run config/ios-wdio.conf.js --spec ./test/ios/specs/actions.e2e.js"
     }
 }

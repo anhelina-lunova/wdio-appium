@@ -228,18 +228,18 @@ export const config = {
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
-    beforeTest: async function (test, context) {
-        try {
-            await driver.startRecordingScreen({
-                videoType: "libx264", // Change from mp4 to a specific codec
-                videoQuality: "low",
-                bitRate: "500000", // 0.5 Mbps is enough for tests
-                timeLimit: 180,
-            });
-        } catch (e) {
-            console.warn(`[Video Start Error]: ${e.message}`);
-        }
-    },
+    // beforeTest: async function (test, context) {
+    //     try {
+    //         await driver.startRecordingScreen({
+    //             videoType: "libx264", // Change from mp4 to a specific codec
+    //             videoQuality: "low",
+    //             bitRate: "500000", // 0.5 Mbps is enough for tests
+    //             timeLimit: 180,
+    //         });
+    //     } catch (e) {
+    //         console.warn(`[Video Start Error]: ${e.message}`);
+    //     }
+    // },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
@@ -273,19 +273,19 @@ export const config = {
         }
 
         // 2. Videos for all tests
-        try {
-            // Stop recording and get base64
-            const video = await driver.stopRecordingScreen();
+        // try {
+        //     // Stop recording and get base64
+        //     const video = await driver.stopRecordingScreen();
 
-            // Adding to Allure
-            allureReporter.addAttachment(
-                `Execution Video - ${test.title}`,
-                Buffer.from(video, "base64"),
-                "video/mp4",
-            );
-        } catch (e) {
-            console.warn(`[Video Error]: ${e.message}`);
-        }
+        //     // Adding to Allure
+        //     allureReporter.addAttachment(
+        //         `Execution Video - ${test.title}`,
+        //         Buffer.from(video, "base64"),
+        //         "video/mp4",
+        //     );
+        // } catch (e) {
+        //     console.warn(`[Video Error]: ${e.message}`);
+        // }
     },
 
     /**

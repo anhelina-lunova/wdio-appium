@@ -264,17 +264,17 @@ export const config = {
         context,
         { error, result, duration, passed, retries },
     ) {
-        // 1. Скріншот лише при падінні
+        // 1. Screenshot only when falling
         if (!passed) {
             await browser.takeScreenshot();
         }
 
-        // 2. Відео для всіх тестів
+        // 2. Videos for all tests
         try {
-            // Зупиняємо запис і отримуємо base64
+            // Stop recording and get base64
             const video = await driver.stopRecordingScreen();
 
-            // Додаємо в Allure
+            // Adding to Allure
             allureReporter.addAttachment(
                 `Execution Video - ${test.title}`,
                 Buffer.from(video, "base64"),

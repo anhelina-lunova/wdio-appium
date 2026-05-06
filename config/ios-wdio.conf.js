@@ -56,12 +56,15 @@ export const config = {
             // capabilities for local Appium web tests on an iOS Simulator
             platformName: "iOS",
             // browserName: "Safari",
-            "appium:deviceName": "iPhone 16 Pro Max",
-            "appium:platformVersion": "26.1",
+            // "appium:deviceName": "iPhone 16 Pro Max",
+            "appium:deviceName": "iPhone 16 Plus",
+            // "appium:platformVersion": "26.1",
+            "appium:platformVersion": "18.1",
             "appium:automationName": "XCUITest",
             "appium:app": path.join(
                 process.cwd(),
-                "./apps/ios/simulator-prod.app",
+                // "./apps/ios/simulator-prod.app",
+                "./apps/ios/UIKitCatalog.app",
             ),
         },
     ],
@@ -228,9 +231,10 @@ export const config = {
     beforeTest: async function (test, context) {
         try {
             await driver.startRecordingScreen({
-                videoType: "mp4",
+                videoType: "libx264", // Change from mp4 to a specific codec
+                videoQuality: "low",
+                bitRate: "500000", // 0.5 Mbps is enough for tests
                 timeLimit: 180,
-                bitRate: 1000000, // 1Mbps
             });
         } catch (e) {
             console.warn(`[Video Start Error]: ${e.message}`);
@@ -263,17 +267,17 @@ export const config = {
         context,
         { error, result, duration, passed, retries },
     ) {
-        // 1. Скріншот лише при падінні
+        // 1. Screenshot only when falling
         if (!passed) {
             await browser.takeScreenshot();
         }
 
-        // 2. Відео для всіх тестів
+        // 2. Videos for all tests
         try {
-            // Зупиняємо запис і отримуємо base64
+            // Stop recording and get base64
             const video = await driver.stopRecordingScreen();
 
-            // Додаємо в Allure
+            // Adding to Allure
             allureReporter.addAttachment(
                 `Execution Video - ${test.title}`,
                 Buffer.from(video, "base64"),

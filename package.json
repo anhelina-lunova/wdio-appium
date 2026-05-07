@@ -33,6 +33,7 @@
         "and-homework-2": "npx wdio run config/android-wdio.conf.js --spec ./test/android/specs/homeworks/hw2Actions.e2e.js",
         "and-homework-3": "npx wdio run config/android-wdio.conf.js --spec ./test/android/specs/homeworks/hw3NativeActions.e2e.js",
         "ios-search": "npx wdio run config/ios-wdio.conf.js --spec ./test/ios/specs/search.e2e.js",
-        "ios-actions": "npx wdio run config/ios-wdio.conf.js --spec ./test/ios/specs/actions.e2e.js"
+        "ios-actions": "npx wdio run config/ios-wdio.conf.js --spec ./test/ios/specs/actions.e2e.js",
+        "ios-native-actions": "npx wdio run config/ios-wdio.conf.js --spec ./test/ios/specs/nativeActions.e2e.js"
     }
 }

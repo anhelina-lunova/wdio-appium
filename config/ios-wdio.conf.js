@@ -63,8 +63,8 @@ export const config = {
             "appium:automationName": "XCUITest",
             "appium:app": path.join(
                 process.cwd(),
-                // "./apps/ios/simulator-prod.app",
-                "./apps/ios/UIKitCatalog.app",
+                "./apps/ios/simulator-prod.app",
+                // "./apps/ios/UIKitCatalog.app",
             ),
         },
     ],

@@ -53,12 +53,9 @@ export const config = {
     //
     capabilities: [
         {
-            // capabilities for local Appium web tests on an iOS Simulator
+            // capabilities for local Appium mobile tests on an iOS Simulator
             platformName: "iOS",
-            // browserName: "Safari",
-            // "appium:deviceName": "iPhone 16 Pro Max",
             "appium:deviceName": "iPhone 16 Plus",
-            // "appium:platformVersion": "26.1",
             "appium:platformVersion": "18.1",
             "appium:automationName": "XCUITest",
             "appium:app": path.join(
@@ -67,6 +64,11 @@ export const config = {
                 // "./apps/ios/UIKitCatalog.app",
             ),
         },
+        // {
+        //     platformName: "iOS",
+        //     "appium:udid": "00008101-001C2C910AA2001E",
+        //     "appium:automationName": "XCUITest",
+        // },
     ],
 
     //

@@ -24,7 +24,7 @@ export const config = {
     // The path of the spec files will be resolved relative from the directory of
     // of the config file unless it's absolute.
     //
-    specs: ["../test/android/specs/**/*.js"],
+    specs: ["../test/mobile-browser/specs/**/*.js"],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -53,16 +53,13 @@ export const config = {
     //
     capabilities: [
         {
-            // capabilities for local Appium mobile tests on an Android Emulator
+            // capabilities for local Appium web tests on an Android Emulator
             platformName: "Android",
+            "appium:browserName": "Chrome",
             "appium:deviceName": "Pixel 10",
-            "appium:platformVersion": "37.0",
+            "appium:platformVersion": "17.0",
             "appium:automationName": "UiAutomator2",
-            "appium:app": path.join(
-                process.cwd(),
-                "./apps/android/apk-prod.apk",
-                // "./apps/android/ApiDemos-debug.apk",
-            ),
+            "appium:chromedriver_autodownload": true,
         },
     ],
 

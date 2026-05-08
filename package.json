@@ -15,8 +15,8 @@
         "@wdio/spec-reporter": "^9.27.1",
         "allure-commandline": "^2.38.1",
         "appium": "^3.3.1",
-        "appium-uiautomator2-driver": "^7.2.0",
-        "appium-xcuitest-driver": "^11.2.1",
+        "appium-uiautomator2-driver": "^7.2.2",
+        "appium-xcuitest-driver": "^11.2.4",
         "dotenv": "^17.4.2"
     },
     "scripts": {
@@ -35,6 +35,7 @@
         "ios-search": "npx wdio run config/ios-wdio.conf.js --spec ./test/ios/specs/search.e2e.js",
         "ios-actions": "npx wdio run config/ios-wdio.conf.js --spec ./test/ios/specs/actions.e2e.js",
         "ios-native-actions": "npx wdio run config/ios-wdio.conf.js --spec ./test/ios/specs/nativeActions.e2e.js",
-        "ios-sign-in": "npx wdio run config/ios-wdio.conf.js --spec ./test/ios/specs/signIn.e2e.js"
+        "ios-sign-in": "npx wdio run config/ios-wdio.conf.js --spec ./test/ios/specs/signIn.e2e.js",
+        "and-web-test": "npx wdio run config/android-browser-wdio.conf.js --spec ./test/mobile-browser/specs/test.e2e.js"
     }
 }

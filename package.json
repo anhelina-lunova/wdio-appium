@@ -3,8 +3,8 @@
     "type": "module",
     "imports": {
         "#test/*": "./test/*",
-        "#pages/*": "./test/page-objects/pages/*",
-        "#forms/*": "./test/page-objects/forms/*"
+        "#pages-android-browser/*": "./test/mobile-browser-android/page-objects/pages/*",
+        "#forms-android-browser/*": "./test/mobile-browser-android/page-objects/forms/*"
     },
     "devDependencies": {
         "@wdio/allure-reporter": "^9.27.1",
@@ -36,6 +36,7 @@
         "ios-actions": "npx wdio run config/ios-wdio.conf.js --spec ./test/ios/specs/actions.e2e.js",
         "ios-native-actions": "npx wdio run config/ios-wdio.conf.js --spec ./test/ios/specs/nativeActions.e2e.js",
         "ios-sign-in": "npx wdio run config/ios-wdio.conf.js --spec ./test/ios/specs/signIn.e2e.js",
-        "and-web-test": "npx wdio run config/android-browser-wdio.conf.js --spec ./test/mobile-browser/specs/test.e2e.js"
+        "and-web-test-sample": "npx wdio run config/android-browser-wdio.conf.js --spec ./test/mobile-browser-sample/specs/test.e2e.js",
+        "and-web-tests": "npx wdio run config/android-browser-wdio.conf.js"
     }
 }

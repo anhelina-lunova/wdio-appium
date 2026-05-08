@@ -1,6 +1,6 @@
 import { driver, expect } from "@wdio/globals";
-import LoginPage from "../page-objects/screens/login.page";
-import SecurePage from "../page-objects/screens/secure.page";
+import LoginPage from "../page-objects/pages/login.page";
+import SecurePage from "../page-objects/pages/secure.page";
 
 describe("My login application", () => {
     it("Should login with valid credentials", async () => {

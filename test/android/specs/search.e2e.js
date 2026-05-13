@@ -12,6 +12,11 @@ describe("Search elements", () => {
         await driver.pause(2000);
     });
 
+    it("UI selector", async () => {
+        await $('android=new UiSelector().text("NFC")').click();
+        await driver.pause(2000);
+    });
+
     it("Class Name", async () => {
         const elements = await $$(".android.widget.TextView");
         await expect(elements).toBeElementsArrayOfSize(12);
@@ -21,11 +26,6 @@ describe("Search elements", () => {
     it("Xpath", async () => {
         await $("//android.widget.TextView[@content-desc='Media']").click();
         await $("(//android.widget.TextView)[3]").click();
-        await driver.pause(2000);
-    });
-
-    it("UI selector", async () => {
-        await $('android=new UiSelector().text("NFC")').click();
         await driver.pause(2000);
     });
 });
